@@ -4,20 +4,18 @@ public class Pet {
     private String raca;
     private boolean reservado;
 
-    // Construtor completo
+    public Pet(){
+
+    }
     public Pet(String nome, int idade, String raca, boolean reservado) {
         this.nome = nome;
         this.idade = idade;
         this.raca = raca;
         this.reservado = reservado;
     }
-
-    // Construtor simplificado
     public Pet(String nome, String raca, int idade) {
-        this(nome, idade, raca, false); // Definindo reservado como false por padrão
+        this(nome, idade, raca, false);
     }
-
-    // Métodos getters e setters
     public String getNome() {
         return nome;
     }
