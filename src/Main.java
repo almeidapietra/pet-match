@@ -31,7 +31,6 @@ public class Main {
                 case 5:
                     listarPets(gerenciador);
                     break;
-
                 case 6:
                     System.out.println("Saindo...");
                     break;
