@@ -50,51 +50,21 @@ public class GerenciadorDePets {
     }
 
     public void listarPets() {
-        if (pets.isEmpty()) {
-            System.out.println("Nenhum pet cadastrado.");
-            return;
-        }
-        for (Pet pet : pets) {
-            System.out.println(pet);
-        }
+
+
     }
 
     public void editarPet(String nomeAntigo, String novoNome, int novaIdade) {
-        for (Pet pet : pets) {
-            if (pet.getNome().equalsIgnoreCase(nomeAntigo)) {
-                pet.setNome(novoNome);
-                pet.setIdade(novaIdade);
-                System.out.println("Pet atualizado com sucesso!");
-                return;
-            }
-        }
-        System.out.println("Pet com o nome '" + nomeAntigo + "' não encontrado.");
+
     }
 
     public void reservarPet(String nome) {
-        for (Pet pet : pets) {
-            if (pet.getNome().equalsIgnoreCase(nome)) {
-                pet.reservar();
-                System.out.println("Pet reservado com sucesso!");
-                return;
-            }
-        }
-        System.out.println("Pet com o nome '" + nome + "' não encontrado.");
+
     }
 
     public void deletarPet(String nome) {
-        Pet petToRemove = null;
-        for (Pet pet : pets) {
-            if (pet.getNome().equalsIgnoreCase(nome)) {
-                petToRemove = pet;
-                break;
-            }
-        }
-        if (petToRemove != null) {
-            pets.remove(petToRemove);
-            System.out.println("Pet deletado com sucesso!");
-        } else {
-            System.out.println("Pet com o nome '" + nome + "' não encontrado.");
-        }
+
     }
+
+
 }
