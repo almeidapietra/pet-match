@@ -50,8 +50,22 @@ public class GerenciadorDePets {
     }
 
     public void listarPets() {
+        if (pets.isEmpty()) {
+            System.out.println("Nenhum pet encontrado!\n");
+        } else {
+            System.out.println("Lista de Pets cadastrados:\n ");
+            for (Pet pet : pets) {
+                System.out.println("Nome: " + pet.getNome());
+                System.out.println("Raca: " + pet.getRaca());
+                System.out.println("Idade: " + pet.getIdade());
+                System.out.println("Reservado: " + pet.isReservado());
 
-
+                if (pet instanceof Cachorro cachorro) {
+                    System.out.println("Porte: " + cachorro.getPorte());
+                }
+                System.out.println();
+            }
+        }
     }
 
     public void editarPet(String nomeAntigo, String novoNome, int novaIdade) {
