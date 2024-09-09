@@ -97,7 +97,18 @@ public class GerenciadorDePets {
     }
 
     public void reservarPet(String nome) {
-
+        for (Pet pet : pets) {
+            if (pet.getNome().equalsIgnoreCase(nome)) {
+                if (pet.isReservado()) {
+                    System.out.println("Pet já está reservado.");
+                } else {
+                    pet.setReservado(true);
+                    System.out.println("Pet '" + nome + "' reservado com sucesso!");
+                }
+                return;
+            }
+        }
+        System.out.println("Pet não encontrado.\n");
     }
 
     public void deletarPet(String nome) {
