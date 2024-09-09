@@ -68,7 +68,31 @@ public class GerenciadorDePets {
         }
     }
 
-    public void editarPet(String nomeAntigo, String novoNome, int novaIdade) {
+    public void editarPet(Scanner sc) {
+        System.out.print("Digite o nome do pet: ");
+        String nome = sc.nextLine();
+
+        boolean petEncontrado = false;
+
+        for (Pet pet : pets) {
+            if (pet.getNome().equalsIgnoreCase(nome)) {
+                System.out.print("Digite o novo nome do Pet: ");
+                String novoNome = sc.nextLine();
+
+                System.out.print("Digite a nova idade do Pet: ");
+                int novaIdade = sc.nextInt();
+                sc.nextLine();
+
+                pet.setNome(novoNome);
+                pet.setIdade(novaIdade);
+                petEncontrado = true;
+                System.out.println("Pet atualizado com sucesso!\n");
+                break;
+            }
+        }
+        if (!petEncontrado) {
+            System.out.println("Pet não encontrado.\n");
+        }
 
     }
 
