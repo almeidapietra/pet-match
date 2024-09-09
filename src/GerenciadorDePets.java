@@ -99,20 +99,41 @@ public class GerenciadorDePets {
     public void reservarPet(String nome) {
         for (Pet pet : pets) {
             if (pet.getNome().equalsIgnoreCase(nome)) {
-                if (pet.isReservado()) {
-                    System.out.println("Pet já está reservado.");
-                } else {
+                if (!pet.isReservado()) {
                     pet.setReservado(true);
                     System.out.println("Pet '" + nome + "' reservado com sucesso!");
+                } else {
+                    System.out.println("Pet '" + nome + "' já está reservado.");
                 }
                 return;
             }
         }
-        System.out.println("Pet não encontrado.\n");
+        System.out.println("Pet '" + nome + "' não encontrado.");
     }
 
-    public void deletarPet(String nome) {
 
+    public void retirarPet(String nome) {
+        boolean petRemovido = false;
+
+        for (int i = 0; i < pets.size(); i++) {
+            Pet pet = pets.get(i);
+            if (pet.getNome().equalsIgnoreCase(nome)) {
+                // Verifica se o pet está reservado
+                if (pet.isReservado()) {
+                    // Remove o pet da lista
+                    pets.remove(i);
+                    System.out.println("Pet '" + nome + "' retirado com sucesso!");
+                } else {
+                    System.out.println("Pet '" + nome + "' não está reservado.");
+                }
+                petRemovido = true;
+                break;
+            }
+        }
+
+        if (!petRemovido) {
+            System.out.println("Pet '" + nome + "' não encontrado.");
+        }
     }
 
 
