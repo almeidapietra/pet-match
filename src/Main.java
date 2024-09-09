@@ -22,11 +22,11 @@ public class Main {
                     break;
 
                 case 3:
-
+                    gerenciador.reservarPet(sc);
                     break;
 
                 case 4:
-
+                    gerenciador.removerPet(sc);
                     break;
 
                 case 5:
@@ -49,7 +49,7 @@ public class Main {
         System.out.println("1 - Cadastrar Pet");
         System.out.println("2 - Editar Pet");
         System.out.println("3 - Reservar Pet");
-        System.out.println("4 - Deletar Pet");
+        System.out.println("4 - Remover Pet");
         System.out.println("5 - Listar Pets");
         System.out.println("6 - Sair");
         System.out.print("Escolha uma opção: ");
