@@ -30,8 +30,9 @@ public class Main {
                     break;
 
                 case 5:
-
+                    gerenciador.listarPets();
                     break;
+
                 case 6:
                     System.out.println("Saindo...");
                     break;
